@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>New Task addition to your ToDo</title>
+  <script src="../../../angular.min.js"></script>
+</head>
+
+<body ng-app="Newaddition">
+<h3>Add another task to your List</h3>
+  <script>
+ angular.module('Newaddition', [])
+   .controller('DateController', ['$scope', function($scope) {
+     $scope.example = {
+       value: new Date(1970, 0, 1, 14, 57, 0)
+     };
+   }]);
+</script>
+<form name="myForm" ng-controller="DateController as dateCtrl" action = "{{ url_for('addrec') }}" method = "POST">
+Enter Text:<br>
+         <input type = "textarea" name = "text11" /></br>
+   <label for="recordInput">Creation Time:</label>
+   <input type="time" id="recordInput" name="input" ng-model="example.value"
+       placeholder="HH:mm:ss" min="00:00:00" max="24:00:00" required />
+   <br/>
+   <label for="exampleInput">Reminder Time:</label>
+   <input type="time" id="exampleInput" name="input" ng-model="example.value"
+       placeholder="HH:mm:ss" min="00:00:00" max="24:00:00" required />
+   <br/>
+   <input type = "submit" value = "submit" /><br>
+</form>
+</body>
+</html>

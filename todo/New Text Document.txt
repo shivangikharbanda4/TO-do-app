@@ -1,0 +1,5 @@
+from django.urls import url
+from . import views
+urlpatterns = [
+    path(r'^$', views.add_list, name='add_list'),
+]
